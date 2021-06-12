@@ -1,9 +1,11 @@
-.navbar-text {
+.navbar-links {
+
     padding-left: 10px;
     padding-right: 10px;
 }
 
 .navbar-link {
+    color: white;
     text-decoration: none;
     margin-right: 10px;
 }
