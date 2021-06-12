@@ -12,9 +12,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-dark bg-dark">
     <div class="navbar-header">
-      <!--suppress CheckImageSize -->
-      <img src="icon-large.png" height="30" alt="Website icon">
-
+      <a href="?"><!--suppress CheckImageSize --> <img src="icon-large.png" height="30" alt="Website icon"></a>
       <span class="navbar-links" id="nav-links"></span>
     </div>
 
@@ -32,4 +30,28 @@
       });
     </script>
   </nav>
+
+  <!-- Page Content -->
+  <div id="content" class="content text-center">
+    <!-- Intro -->
+    <div id="watch-a-simp">
+      <h1> Watch the Simps </h1>
+      <p>
+        Check when those simps have been simping!
+        <br>
+        View live reports of simping activity, simp history, and a detailed analysis of known simps.
+        <br>
+        Choose a simp from the menu above to view report.
+      </p>
+    </div>
+
+    <!-- Not Found -->
+    <div id="simp-not-found" hidden>
+      <h1> Simp Not Found </h1>
+      <p>
+        There are no known simps by the name of <u id="simp-name-not-found"></u>!
+      </p>
+    </div>
+
+  </div>
 </body>
