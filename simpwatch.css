@@ -1,0 +1,9 @@
+.navbar-text {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.navbar-link {
+    text-decoration: none;
+    margin-right: 10px;
+}
