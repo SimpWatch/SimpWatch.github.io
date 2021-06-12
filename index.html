@@ -19,15 +19,15 @@
     <!--suppress JSUnfilteredForInLoop -->
     <script>
       $.getJSON('simps.json', function(data) {
-        let simps = data.simps;
-        var linksHtml = ""
+        let simps = data.simps
+        let linksHtml = ""
 
         for(let index in simps) {
           linksHtml += `<a class="navbar-link" href="?simp=${simps[index]}">Simp ${simps[index]}</a>`
         }
 
         $("#nav-links").html(linksHtml)
-      });
+      })
     </script>
   </nav>
 
@@ -45,13 +45,61 @@
       </p>
     </div>
 
-    <!-- Not Found -->
-    <div id="simp-not-found" hidden>
+    <!-- Simp Not Found -->
+    <div id="simp-not-found" style="display: none">
       <h1> Simp Not Found </h1>
       <p>
         There are no known simps by the name of <u id="simp-name-not-found"></u>!
       </p>
     </div>
 
+    <!-- Simp Report -->
+    <div id="simp-report" style="display: none">
+      <h1><u id="simp-name"> Simp Name </u></h1>
+      <h2><i id="simp-summary"> Summary of the simp. </i></h2>
+    </div>
   </div>
+
+  <script>
+    let url = document.URL.split("?")
+
+    function setupSimpReport(simp, report) {
+      $("#simp-name").html(`Simp ${simp}`)
+      $("#simp-summary").html(report.summary)
+    }
+
+    function handleSimpRequest(simp) {
+      $.getJSON(`simps/${simp.toLowerCase()}.json`, function(data) {
+        console.log(data)
+
+        $("#watch-a-simp").hide()
+        setupSimpReport(simp, data)
+        $("#simp-report").show()
+      }).fail(function () {
+        $("#watch-a-simp").hide()
+        $("#simp-not-found").show()
+        $("#simp-name-not-found").html(simp)
+      })
+    }
+
+    function getSimpFromUrl() {
+      if(url.length === 2 && url[1].startsWith("simp=")) {
+        let val = url[1].replace("simp=", "")
+        return val.length > 0 ? val : null
+      }
+
+      return null
+    }
+
+    $(document).ready(function() {
+      let simp = getSimpFromUrl();
+
+      if(simp !== null) {
+        console.log("Simp: " + simp)
+        handleSimpRequest(simp)
+      } else {
+        console.log("No simp specified!")
+      }
+    });
+  </script>
 </body>
