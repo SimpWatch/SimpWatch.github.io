@@ -1,3 +1,16 @@
 {
-  "summary": "Fazwee"
+  "description": "description",
+
+  "score": null,
+  "color": "",
+  "comment": "",
+
+  "activity": {
+    "current": 0,
+    "previous": 0
+  },
+
+  "history": {
+    "year": 0
+  }
 }

@@ -1,7 +1,7 @@
 let url = document.URL.split("?")
 
 $(document).ready(function() {
-    let simp = getSimpFromUrl();
+    let simp = getSimpFromUrl()
 
     if(simp !== null) {
         console.log("Simp: " + simp)
@@ -9,7 +9,7 @@ $(document).ready(function() {
     } else {
         console.log("No simp specified!")
     }
-});
+})
 
 function getSimpFromUrl() {
     if(url.length === 2 && url[1].startsWith("simp=")) {
@@ -26,7 +26,7 @@ function handleSimpRequest(simp) {
 
         setupReport(simp, data)
         google.charts.load('current', {'packages':['corechart']})
-        google.charts.setOnLoadCallback(() => {setupReportCharts(data)})
+        google.charts.setOnLoadCallback(() => {setupReportCharts(simp, data)})
 
         $("#simp-report").show()
     }).fail(function () {

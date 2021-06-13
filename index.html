@@ -23,50 +23,80 @@
   <!-- Page Content -->
   <div id="content" class="content text-center">
     <!-- Intro -->
-    <div id="watch-a-simp">
-      <h1> Watch the Simps </h1>
+    <div class="centered" id="watch-a-simp">
+      <h1> Live Simp Reports </h1>
       <p>
-        Choose a simp from the menu above to check when a simps been simping!
+        Choose a simp from the menu above to view the live report on the simps current and past simping activity!
       </p>
     </div>
 
     <!-- Simp Not Found -->
-    <div id="simp-not-found" style="display: none">
+    <div class="centered" id="simp-not-found" style="display: none">
       <h1> Simp Not Found </h1>
       <p>
-        There are no known simps by the name of <u id="simp-name-not-found"></u>!
+        We do not known any simps called <u id="simp-name-not-found"></u> :(
       </p>
     </div>
 
     <!-- Simp Report -->
     <div id="simp-report" style="display: none">
-      <h1><u id="simp-name"> Simp Name </u></h1>
-      <h2><i id="simp-summary"> Summary of the simp. </i></h2>
+      <h1><u id="simp-name"></u></h1>
+      <h2><i id="simp-description"></i></h2>
 
-      <div id="chart_div"></div>
+      <div class="container">
+        <div class="row">
+          <!-- Severity -->
+          <div class="report-section col-md-3" style="margin-top: 15px;">
+            <b>Score</b>
+            <div style="font-size: 72px; padding: 10px;"><b id="simp-score"></b></div>
+            <div style="color: darkgray;"><i id="simp-comment"></i></div>
+          </div>
+          <!-- Time -->
+          <div class="report-section col-md-8 offset-md-1" style="margin-top: 15px;">
+            <b>Activity</b>
+            <div id="simp-activity"></div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- History -->
+          <div class="report-section col-md-12" style="margin-top: 15px;">
+            <b>History</b>
+            <div id="simp-history"></div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Simp Report Setup -->
     <script>
       function setupReport(simp, data) {
+        //Title
         $("#simp-name").html(`Simp ${simp}`)
-        $("#simp-summary").html(data.summary)
+        $("#simp-description").html(data.description)
+
+        //Score
+        $("#simp-score").html(data.score)
+        $('#simp-score').css("color", data.color)
+        $("#simp-comment").html(data.comment)
       }
 
-      function setupReportCharts(data) {
-        var chartData = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
-        ]);
+      function setupReportCharts(simp, data) {
+        //Activity
+        new google.visualization.BarChart(document.getElementById('simp-activity')).draw(
+                google.visualization.arrayToDataTable([
+                  ["Year",            simp,                "Average Simp",    "Virgin Simp",   "Twitch Chat Simp"],
+                  ["Current Year",    data.activity.current,            0,                0,                    0],
+                  ["Previous Year",   data.activity.previous,           0,                0,                    0]
+                ]), {"legend": "bottom"})
 
-        var options = {
-          "legend": "bottom"
+        //History
+        let historyData = [["Year", "Simp Activity"]]
+        for(let entry in data.history) {
+          historyData.push([entry, data.history[entry]])
         }
 
-        new google.visualization.LineChart(document.getElementById('chart_div')).draw(chartData, options);
+        new google.visualization.LineChart(document.getElementById('simp-history')).draw(
+                google.visualization.arrayToDataTable(historyData), {"legend": "bottom"})
       }
     </script>
   </div>
