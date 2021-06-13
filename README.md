@@ -1,10 +1,10 @@
 # Simp Watch
 https://SimpWatch.github.io
 
-A satirical webpage created as a joke for personal/private entertainment amongst
-friends, purporting to offer live reports on specific activities of friends
-(referred to as Simps). Hosted publicly solely for the purpose of easily sharing
-privately amongst friends, not for general use by the public.
+A satirical webpage created as a joke for personal/private use as entertainment amongst
+friends, purporting to offer live reports on specific activities of friends (referred
+to as Simps). Hosted publicly solely for the purpose of easily sharing privately between
+friends, not for general use by the public.
 
 ## Disclaimer
 Contains intentionally misleading content not intended for public use or viewing that could be
