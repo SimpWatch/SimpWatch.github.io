@@ -101,58 +101,11 @@ For more information, please refer to <https://unlicense.org>
       </div>
     </div>
 
-    <!-- Simp Report Setup -->
-    <script>
-      let gradings = {
-        "A": "green",
-        "B": "darkblue",
-        "C": "goldenrod",
-        "D": "orangered",
-        "F": "firebrick"
-      }
-
-      function setupReport(simp, data) {
-        //Title
-        $("#simp-name").html(simp)
-        $("#simp-description").html(data.description)
-
-        if(data['simping-spree'] === true)
-          $('#simping-spree').show()
-
-        //Grade
-        let grade = data.grading.grade
-        let gradeColor = gradings[grade.substr(0, 1)]
-
-          $("#simp-grading").html(gradeColor === undefined ? null : grade)
-          $('#simp-grading').css("color", gradeColor === undefined ? "black" : gradeColor)
-
-
-        $("#simp-comment").html(data.grading.comment)
-      }
-
-      function setupReportCharts(simp, data) {
-        //Activity
-        new google.charts.Bar(document.getElementById('simp-activity')).draw(
-                google.visualization.arrayToDataTable([
-                  ["Year",            simp,           "Average Twitch Simp",   "Average Virgin Simp",     "Average Simp"],
-                  ["Current Year",    data.activity.current,           9.50,                    4.75,               3.15],
-                  ["Previous Year",   data.activity.previous,         10.46,                    3.25,               1.75]
-                ]), {"legend": "none"})
-
-        //History
-        let historyData = [["Year", "Simp Activity"]]
-        for(let entry in data.history.graph) {
-          historyData.push([entry, data.history.graph[entry]])
-        }
-
-        new google.charts.Line(document.getElementById('simp-history')).draw(
-                google.visualization.arrayToDataTable(historyData),
-                {"legend": "bottom", height: data.history.height}
-        )
-      }
-    </script>
+    <!-- Simp Report Content Rendering -->
+    <script src="report-rendering.js"></script>
   </div>
 
+  <!-- Page setup and simp request handling -->
   <script src="page-setup.js"></script>
 
   <!-- Footer -->
