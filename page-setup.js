@@ -51,8 +51,10 @@ function handleSimpRequest(simp) {
         $("#watch-a-simp").hide()
 
         setupReport(simp, data)
-        google.charts.load('current', {'packages':['corechart']})
-        google.charts.setOnLoadCallback(() => {setupReportCharts(simp, data)})
+        google.charts.load('current', {'packages':['corechart', 'line', 'bar']})
+        google.charts.setOnLoadCallback(() => {
+            setupReportCharts(simp, data)
+        })
 
         $("#simp-report").show()
     }).fail(function () {

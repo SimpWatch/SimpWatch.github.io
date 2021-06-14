@@ -1,16 +1,25 @@
 {
-  "description": "description",
+  "description": "A natural born simp and proud of it. Always down for some reasonable simping!",
+  "simping-spree": false,
 
-  "score": null,
-  "color": "",
-  "comment": "",
+  "grading": {
+    "grade": "B",
+    "comment": "Simping is lowest it's been in years, while the frequency and severity of simping activities is declining as well."
+  },
 
   "activity": {
-    "current": 0,
-    "previous": 0
+    "current": 5.25,
+    "previous": 7.50
   },
 
   "history": {
-    "year": 0
+    "height": 300,
+    "graph": {
+      "2017": 8.40,
+      "2018": 9.80,
+      "2019": 9.20,
+      "2020": 7.00,
+      "2021": 5.50
+    }
   }
 }

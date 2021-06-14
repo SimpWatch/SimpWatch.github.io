@@ -1,16 +1,30 @@
 {
-  "description": "description",
+  "description": "Suffers from sudden chronic onset simping attacks and simping stupidity.<br>The condition is getting worse with age and will likely prove fatal one day.",
+  "simping-spree": true,
 
-  "score": null,
-  "color": "",
-  "comment": "",
+  "grading": {
+    "grade": "D",
+    "comment": "The Simping sprees are becoming more frequent, more fucked up, and lasting longer. The Simp is out of control!"
+  },
 
   "activity": {
-    "current": 0,
-    "previous": 0
+    "current": 200.00,
+    "previous": 19
   },
 
   "history": {
-    "year": 0
+    "height": 30000,
+    "graph": {
+      "2014": 8.10,
+      "2015": 8.75,
+      "2016": 10.00,
+      "2017": 8.50,
+      "2018": 6.50,
+      "2019": 9.00,
+      "2020": 16.50,
+      "2021": 19.00,
+      "May 2021": 32.00,
+      "June 2021": 200000
+    }
   }
 }

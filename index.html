@@ -53,7 +53,7 @@ For more information, please refer to <https://unlicense.org>
     <div class="centered" id="watch-a-simp">
       <h1> Live Simp Reports </h1>
       <p>
-        Choose a simp from the menu above to view the live report on the simps current and past simping activity!
+        Choose a simp from the menu above to view live report on current and past simping activity!
       </p>
     </div>
 
@@ -68,62 +68,87 @@ For more information, please refer to <https://unlicense.org>
     <!-- Simp Report -->
     <div id="simp-report" style="display: none">
       <h1><u id="simp-name"></u></h1>
-      <h2><i id="simp-description"></i></h2>
+      <h4><i id="simp-description"></i></h4>
+      <h3 style="color: darkred; display: none" id="simping-spree"><p>
+        <b><u>IS ON A SIMPING SPREE!</u></b>
+      </p></h3>
 
       <div class="container">
+
         <div class="row">
-          <!-- Severity -->
+          <!-- Grading -->
           <div class="report-section col-md-3" style="margin-top: 15px;">
-            <b>Score</b>
-            <div style="font-size: 72px; padding: 10px;"><b id="simp-score"></b></div>
+            <b>Simp Grade</b>
+            <div style="font-size: 72px; padding: 10px;"><b id="simp-grading"></b></div>
             <div style="color: darkgray;"><i id="simp-comment"></i></div>
           </div>
-          <!-- Time -->
+
+          <!-- Activity -->
           <div class="report-section col-md-8 offset-md-1" style="margin-top: 15px;">
-            <b>Activity</b>
+            <b>Simp Activity</b>
             <div id="simp-activity"></div>
           </div>
         </div>
+
         <div class="row">
           <!-- History -->
           <div class="report-section col-md-12" style="margin-top: 15px;">
-            <b>History</b>
+            <b>Simping History</b>
             <div id="simp-history"></div>
           </div>
         </div>
+
       </div>
     </div>
 
     <!-- Simp Report Setup -->
     <script>
+      let gradings = {
+        "A": "green",
+        "B": "darkblue",
+        "C": "goldenrod",
+        "D": "orangered",
+        "F": "firebrick"
+      }
+
       function setupReport(simp, data) {
         //Title
-        $("#simp-name").html(`Simp ${simp}`)
+        $("#simp-name").html(simp)
         $("#simp-description").html(data.description)
 
-        //Score
-        $("#simp-score").html(data.score)
-        $('#simp-score').css("color", data.color)
-        $("#simp-comment").html(data.comment)
+        if(data['simping-spree'] === true)
+          $('#simping-spree').show()
+
+        //Grade
+        let grade = data.grading.grade
+        let gradeColor = gradings[grade.substr(0, 1)]
+
+          $("#simp-grading").html(gradeColor === undefined ? null : grade)
+          $('#simp-grading').css("color", gradeColor === undefined ? "black" : gradeColor)
+
+
+        $("#simp-comment").html(data.grading.comment)
       }
 
       function setupReportCharts(simp, data) {
         //Activity
-        new google.visualization.BarChart(document.getElementById('simp-activity')).draw(
+        new google.charts.Bar(document.getElementById('simp-activity')).draw(
                 google.visualization.arrayToDataTable([
-                  ["Year",            simp,                "Average Simp",    "Virgin Simp",   "Twitch Chat Simp"],
-                  ["Current Year",    data.activity.current,            0,                0,                    0],
-                  ["Previous Year",   data.activity.previous,           0,                0,                    0]
-                ]), {"legend": "bottom"})
+                  ["Year",            simp,           "Average Twitch Simp",   "Average Virgin Simp",     "Average Simp"],
+                  ["Current Year",    data.activity.current,           9.50,                    4.75,               3.15],
+                  ["Previous Year",   data.activity.previous,         10.46,                    3.25,               1.75]
+                ]), {"legend": "none"})
 
         //History
         let historyData = [["Year", "Simp Activity"]]
-        for(let entry in data.history) {
-          historyData.push([entry, data.history[entry]])
+        for(let entry in data.history.graph) {
+          historyData.push([entry, data.history.graph[entry]])
         }
 
-        new google.visualization.LineChart(document.getElementById('simp-history')).draw(
-                google.visualization.arrayToDataTable(historyData), {"legend": "bottom"})
+        new google.charts.Line(document.getElementById('simp-history')).draw(
+                google.visualization.arrayToDataTable(historyData),
+                {"legend": "bottom", height: data.history.height}
+        )
       }
     </script>
   </div>
@@ -135,10 +160,10 @@ For more information, please refer to <https://unlicense.org>
     <div class="text-center p-2">
       <!-- CC -->
       <i class="fa fa-creative-commons"></i>
-      <a class="text-white" href="https://creativecommons.org/publicdomain/zero/1.0/">No rights reserved</a>
+      <a class="text-white" href="https://creativecommons.org/publicdomain/zero/1.0/">Copyright Free</a>
       <!-- Github -->
       <i style="margin-left: 10px;" class="fa fa-github"></i>
-      <a class="text-white" href="https://github.com/SimpWatch/SimpWatch.github.io">About Project</a>
+      <a class="text-white" href="https://github.com/SimpWatch/SimpWatch.github.io">About</a>
     </div>
   </footer>
 </body>
