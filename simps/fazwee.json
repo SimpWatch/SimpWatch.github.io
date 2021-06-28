@@ -3,12 +3,12 @@
   "simping-spree": false,
 
   "grading": {
-    "grade": "B",
-    "comment": "Simping is lowest it's been in years, while the frequency and severity of simping activities is declining as well."
+    "grade": "C",
+    "comment": "'Hey luke, can you do me a favor and raise fawzis simp stats? I'm his gf'\n-Fazwee's GF"
   },
 
   "activity": {
-    "current": 5.25,
+    "current": 6.25,
     "previous": 7.50
   },
 
@@ -19,7 +19,8 @@
       "2018": 9.80,
       "2019": 9.20,
       "2020": 7.00,
-      "2021": 5.50
+      "2021": 5.50,
+      "June 2021": 6.25
     }
   }
 }
