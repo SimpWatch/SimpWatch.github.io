@@ -3,12 +3,12 @@
   "simping-spree": false,
 
   "grading": {
-    "grade": "D",
+    "grade": "D-",
     "comment": "Simping problem is getting out of control as of late and shows no signs of slowing down."
   },
 
   "activity": {
-    "current": 8.4,
+    "current": 9.5,
     "previous": 6.25
   },
 
@@ -21,7 +21,7 @@
       "2020": 7.00,
       "2021": 5.50,
       "June 2021": 6.25,
-      "April 2023": 8.4
+      "April 2023": 9.5
     }
   }
 }
