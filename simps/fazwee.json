@@ -3,13 +3,13 @@
   "simping-spree": false,
 
   "grading": {
-    "grade": "C",
-    "comment": "Simping is on the rise, with multiple reports of simping coming in. Downgraded to simp grade C as a result. \"cheese dip sales have gone through the roof\""
+    "grade": "D",
+    "comment": "Simping problem is getting out of control as of late and shows no signs of slowing down."
   },
 
   "activity": {
-    "current": 6.25,
-    "previous": 7.50
+    "current": 8.4,
+    "previous": 6.25
   },
 
   "history": {
@@ -20,7 +20,8 @@
       "2019": 9.20,
       "2020": 7.00,
       "2021": 5.50,
-      "June 2021": 6.25
+      "June 2021": 6.25,
+      "April 2023": 8.4
     }
   }
 }
