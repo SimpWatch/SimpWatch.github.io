@@ -1,19 +1,18 @@
 {
-  "description": "Suffers from sudden chronic onset simping attacks and simping stupidity.<br>The condition is getting worse with age and will likely prove fatal one day.",
-  "simping-spree": true,
+  "description": "The biggest simp of them all.": true,
 
   "grading": {
-    "grade": "F",
-    "comment": "The Simping sprees are becoming more frequent, more fucked up, and lasting longer. The Simp is out of control!"
+    "grade": "F-",
+    "comment": "Still fuck'n simping..."
   },
 
   "activity": {
-    "current": 200,
-    "previous": 100
+    "current": 500,
+    "previous": 200
   },
 
   "history": {
-    "height": 30000,
+    "height": 40000,
     "graph": {
       "2014": 8.10,
       "2015": 8.75,
@@ -23,7 +22,8 @@
       "2019": 9.00,
       "2020": 16.50,
       "2021": 100000.00,
-      "June 2021": 200000
+      "June 2021": 200000,
+      "April 2023": 595000
     }
   }
 }
