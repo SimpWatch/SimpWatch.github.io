@@ -1,6 +1,6 @@
 {
   "description": "A homie with a worrying simping condition.",
-  "simping-spree": true,
+  "simping-spree": false,
 
   "grading": {
     "grade": "C+",
