@@ -1,0 +1,23 @@
+{
+  "description": "A homie with a worrying simping condition.",
+  "simping-spree": true,
+
+  "grading": {
+    "grade": "C+",
+    "comment": "Simping is on the rise..."
+  },
+
+  "activity": {
+    "current": 5.7,
+    "previous": 3.4
+  },
+
+  "history": {
+    "height": 400,
+    "graph": {
+      "JANUARY 2024": 2.6,
+      "MARCH 2024": 3.4.
+      "APRIL 2024": 5.7
+    }
+  }
+}
